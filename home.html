@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Application</title>
+    <style>
+      body {
+        font-family: "Arial", sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f8f8f8;
+        text-align: center;
+      }
+
+      h1 {
+        color: #333;
+        margin-top: 50px;
+      }
+
+      a {
+        display: inline-block;
+        margin-top: 20px;
+        padding: 15px 30px;
+        background-color: #4caf50;
+        color: #fff;
+        font-size: 18px;
+        border-radius: 5px;
+        text-decoration: none;
+      }
+
+      a:hover {
+        background-color: #456ca0;
+      }
+      body {
+        font-family: system-ui, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+      }
+      
+      h1 {
+        text-align: center;
+        font-size: calc( 1em + 20vmin );
+        font-weight: 900;
+        color: tomato;
+        
+        --x-offset: -0.0625em;
+        --y-offset: 0.0625em;
+        --stroke: 0.025em;
+        --background-color: white;
+        --stroke-color: lightblue;
+        
+        text-shadow: 
+          
+          var(--x-offset)
+          var(--y-offset)
+          0px
+          var(--background-color), 
+          
+          calc( var(--x-offset) - var(--stroke) )
+          calc( var(--y-offset) + var(--stroke) )
+          0px
+          var(--stroke-color);
+        
+      }
+      /* for browsers that support spread, added in
+      https://drafts.csswg.org/css-text-decor-4/#text-shadow-property
+      currently: none browsers! none of them!
+      I can't even find a test: 
+      https://wpt.fyi/results/css/css-text-decor */
+      @supports ( text-shadow: 1px 1px 1px 1px black ) {
+        h1 {
+          text-shadow:
+            
+            var(--x-offset)
+            var(--y-offset)
+            0px
+            0px
+            var(--background-color), 
+            
+            var(--x-offset) 
+            var(--y-offset)
+            var(--stroke)
+            0px
+            var(--stroke-color);
+          
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h1>My Application</h1>
+    <a href="/project">Projects</a>
+  </body>
+</html>
